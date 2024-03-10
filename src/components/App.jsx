@@ -5,12 +5,6 @@ import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import { MainBlock } from './App.styled';
 
-const CARD_CONTACT = {
-  id: '',
-  name: '',
-  number: '',
-};
-
 class App extends Component {
   state = {
     contacts: [

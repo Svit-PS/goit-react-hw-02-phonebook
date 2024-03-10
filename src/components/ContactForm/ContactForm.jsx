@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { FormSt, Label } from './ContactForm.styled';
 
+const CARD_CONTACT = {
+  name: '',
+  number: '',
+};
+
 class ContactForm extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
+  state = { ...CARD_CONTACT };
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
@@ -18,6 +20,7 @@ class ContactForm extends Component {
       name: this.state.name,
       number: this.state.number,
     });
+    this.setState({ ...CARD_CONTACT });
   };
 
   render() {
