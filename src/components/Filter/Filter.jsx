@@ -1,15 +1,29 @@
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { LabelFilter } from './Filter.styled';
 
-const Filter = ({ filterChange }) => {
-  return (
-    <>
-      <h4>Find contacts by name</h4>
-      <input type="text" name="filter" onChange={filterChange} />
-    </>
-  );
-};
+class Filter extends Component {
+  state = { filterStr: '' };
 
-Filter.prototype = {
-  filterChange: PropTypes.func.isRequired,
-};
+  handleChange = ({ target: { value } }) => {
+    this.setState({ filterStr: value });
+    this.props.filterChange(value);
+  };
+
+  render() {
+    return (
+      <>
+        <LabelFilter htmlFor="inFind">
+          Find contacts by name
+          <input
+            id="inFind"
+            type="text"
+            name="filter"
+            value={this.state.filterStr}
+            onChange={this.handleChange}
+          />
+        </LabelFilter>
+      </>
+    );
+  }
+}
 export default Filter;

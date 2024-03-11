@@ -24,6 +24,7 @@ class ContactForm extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
     return (
       <>
         <FormSt onSubmit={this.handleSubmit}>
@@ -35,7 +36,7 @@ class ContactForm extends Component {
               id="nameId"
               required
               onChange={this.handleChange}
-              value={this.state.name}
+              value={name}
               placeholder="Name Surname"
             />
           </Label>
@@ -47,7 +48,7 @@ class ContactForm extends Component {
               id="numberId"
               required
               onChange={this.handleChange}
-              value={this.state.number}
+              value={number}
               placeholder="999-99-99"
             />
           </Label>

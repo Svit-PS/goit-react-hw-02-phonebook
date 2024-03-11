@@ -37,8 +37,10 @@ class App extends Component {
     }));
   };
 
-  filterChange = event => {
-    this.setState({ filter: event.target.value });
+  filterChange = filter => {
+    console.log('filter: ', filter);
+
+    this.setState({ filter });
   };
 
   render() {
