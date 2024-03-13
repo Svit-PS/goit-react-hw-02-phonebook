@@ -38,8 +38,6 @@ class App extends Component {
   };
 
   filterChange = filter => {
-    console.log('filter: ', filter);
-
     this.setState({ filter });
   };
 
@@ -56,7 +54,10 @@ class App extends Component {
         <ContactForm onSubmitForm={this.addContact} />
 
         <h2>Contacts</h2>
-        <Filter filterChange={this.filterChange} />
+        <Filter
+          filterChange={this.filterChange}
+          filterValue={this.state.filter}
+        />
         <ContactList contacts={arrFilter} deleteId={this.deleteContact} />
       </MainBlock>
     );

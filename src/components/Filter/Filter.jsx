@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { LabelFilter } from './Filter.styled';
 
-const Filter = ({ filterChange }) => {
+const Filter = ({ filterChange, filterValue }) => {
   return (
     <>
       <LabelFilter htmlFor="inFind">
@@ -10,6 +10,7 @@ const Filter = ({ filterChange }) => {
           id="inFind"
           type="text"
           name="filter"
+          value={filterValue}
           onChange={event => filterChange(event.target.value)}
         />
       </LabelFilter>
@@ -19,6 +20,7 @@ const Filter = ({ filterChange }) => {
 
 Filter.prototype = {
   filterChange: PropTypes.func.isRequired,
+  filterValue: PropTypes.string,
 };
 
 export default Filter;
